@@ -1,0 +1,119 @@
+$space: 20px;
+
+.SideBar {
+  display: flex;
+  flex-direction: column;
+  width: var(--sideBarWidth);
+  height: 100%;
+  position: fixed;
+  background: var(--bg);
+  transition: var(--transition);
+  // @include Shadow;
+  font-size: 16px;
+  z-index: 999;
+
+  >header{
+    position: absolute;
+    right: -15px;
+    top: -15px;
+    svg{
+      background: var(--bg);
+      border: 1px solid var(--bg2);
+      border-radius: 50%;
+      width: 20px;
+      height: 20px;
+      padding: 5px;
+      color: var(--text2);
+    }
+  }
+  > main {
+    margin-top: 20px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-inline: $space;
+    padding-bottom: $space;
+    @include Scrollbar;
+    ul,
+    li {
+      all: unset;
+    }
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      &:hover {
+        .MenuItem {
+          &:hover {
+            background-color: var(--primary);
+            color: var(--secondary);
+            svg {
+              color: var(--secondary);
+            }
+          }
+          &:not(:hover) {
+            background-color: var(--bg);
+            color: var(--text);
+            svg {
+              color: var(--primary);
+            }
+          }
+        }
+      }
+      .MenuItem {
+        position: relative;
+        padding: 10px;
+        border-radius: var(--border-radius);
+        color: var(--text);
+        border-radius: 10px;
+        cursor: pointer;
+        transition: 0.3s ease-in-out;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        svg {
+          font-size: 20px;
+          color: var(--primary);
+        }
+      }
+      .MenuItem.active {
+        background-color: var(--primary);
+        color: var(--secondary);
+        svg {
+          color: var(--secondary);
+        }
+      }
+      .MenuItemDropDown {
+        position: absolute;
+        right: 1%;
+      }
+    }
+  }
+}
+
+.close_side_bar {
+  .SideBar {
+    height: fit-content;
+    border-radius: 0px 0px 10px 10px;
+    padding-bottom: 20px;
+    > main {
+      padding-inline: 10px !important;
+      ul {
+        .MenuItem {
+          justify-content: center;
+          span {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+.ar{
+  .SideBar{
+    >header{
+      right: auto;
+      left: -10px;  
+    }
+  }
+}
