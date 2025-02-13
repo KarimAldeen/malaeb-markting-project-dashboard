@@ -15,10 +15,6 @@ export default defineConfig({
   envPrefix: 'REACT_APP_',
   plugins: [
     react(),
-    visualizer({
-      filename: './bundle-analysis.html', // Output file
-      open: true, // Open the generated file automatically
-    }),
     env(/* options */),
     viteCompression(),
 

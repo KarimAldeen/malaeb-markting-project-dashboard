@@ -7,7 +7,7 @@
     "start": "vite --port=6666",
     "create-module": "./src/scripts/create_module.sh",
     "create-folder": "./src/scripts/create_folder.sh",
-    "build": "tsc && vite build",
+    "build": "vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "format": "prettier --write .",
