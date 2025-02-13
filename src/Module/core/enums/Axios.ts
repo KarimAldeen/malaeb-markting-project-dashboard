@@ -10,9 +10,8 @@ export enum AxiosStatusEnum {
 }
 
 export enum AxiosEnum {
-  BASEURL = import.meta.env.REACT_APP_BASE_URL,
-  IMAGE_BASE_URL = import.meta.env.REACT_APP_BASE_URL + '/' as any,
-
+  BASEURL = "http://161.97.101.224:3003",
+  IMAGE_BASE_URL = "http://161.97.101.224:3003" + '/' as any,
   HEADER_KEY = 'X-Custom-Query-Key',
   HEADER_CUSTOM_MESSAGE = 'X-Custom-message',
   RESPONSE_TYPE = 'json',
